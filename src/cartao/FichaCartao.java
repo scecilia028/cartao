@@ -20,4 +20,8 @@ public class FichaCartao {
     public double getSaldo() {
         return tipoCartao.getLimiteCredito() - debitoAtual;
     }
+
+	public void registrarCompra(double valorCompra) {
+		debitoAtual = debitoAtual + valorCompra;
+	}
 }

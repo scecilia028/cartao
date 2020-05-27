@@ -16,12 +16,19 @@ public class EmpresaCartaoCredito implements ServicosCredito {
             return false;
         }
         
+        ficha.registrarCompra(valorCompra);
+        
         return true;
     }
 
     @Override
     public double verificarSaldo(String numeroCartao) {
-        // TODO Auto-generated method stub
-        return 0;
+    	FichaCartao ficha = armario.getFicha(numeroCartao);
+    
+    	if(ficha == null) {
+    		return 0;
+    	}
+    	
+        return 	ficha.getSaldo();
     }
 }
